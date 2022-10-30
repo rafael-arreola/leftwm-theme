@@ -25,6 +25,11 @@ if [ -x "$(command -v dunst)" ]; then
   dunst -config ~/.config/dunst/dunstrc &
 fi
 
+cd $SCRIPTPATH/..
+mv config.ron 
+mv config.ron.bak
+cp $SCRIPTPATH/leftwm-config/config.ron config.ron
+
 
 cd ${SCRIPTPATH}/polybar
 polybar -m | sed s/:.*// | tac | while read -r monitor

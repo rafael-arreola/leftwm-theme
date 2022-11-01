@@ -1,10 +1,10 @@
 #!/bin/bash
 
-if [ -x "$(command -v paru)"]; then
+if [ -x "$(command -v paru)" ]; then
   paru -Syu --noconfirm rofi alacritty polybar feh picom dunst leftwm leftwm-theme-git leftwm-config-git ttf-fira-code ttf-cascadia-code ttf-iosevka-nerd ttc-iosevka ttf-font-awesome
 fi
 
-if [ -x "$(command -v yay)"]; then
+if [ -x "$(command -v yay)" ]; then
   yay -Syu --noconfirm rofi alacritty polybar feh picom dunst leftwm leftwm-theme-git leftwm-config-git ttf-fira-code ttf-cascadia-code ttf-iosevka-nerd ttc-iosevka ttf-font-awesome
 fi
 

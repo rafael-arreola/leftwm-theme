@@ -10,7 +10,7 @@
   default_border_color: "#2e2459",
   floating_border_color: "#a72145",
   focused_border_color: "#0b7261",
-  
+
   modkey: "Mod4",
   mousekey: "Mod4",
   tags: [
@@ -55,6 +55,7 @@
       (command: Execute, value: "rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'Noto Sans 8'", modifier: ["modkey"], key: "space"),
       (command: Execute, value: "dmenu_run", modifier: ["modkey"], key: "p"),
       (command: Execute, value: "alacritty", modifier: ["Alt", "Shift"], key: "Return"),
+      (command: Execute, value: "flameshot gui --clipboard --path ~/Pictures", modifier: ["modkey", "Shift"], key: "Print"),
       
       (command: CloseWindow, value: "", modifier: ["modkey"], key: "q"),
       (command: SoftReload, value: "", modifier: ["modkey", "Shift"], key: "r"),

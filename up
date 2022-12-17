@@ -1,8 +1,8 @@
 #!/bin/bash
 export SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
-
+ echo $SCRIPTPATH
 # verifica si hay un tema cargado y es dado de baja
-if [ -f "/tmp/leftwm-theme-down"]; then
+if [ -f "/tmp/leftwm-theme-down" ]; then
   /tmp/leftwm-theme-down
   rm /tmp/leftwm-theme-down
 fi
@@ -23,12 +23,8 @@ if [ -x "$(command -v dunst)" ]; then
   dunst -config $SCRIPTPATH/dunst/configrc.ini &
 fi
 
-mv ~/.config/leftwm/config.ron ~/.config/leftwm/config.ron.bak
-cp $SCRIPTPATH/leftwm-config/config.ron ~/.config/leftwm/config.ron
-
 leftwm-command "LoadTheme $SCRIPTPATH/theme.ron"
 
-polybar -m | sed s/:.*// | tac | while read -r monitor
-do
-  monitor=$monitor polybar -c ./polybar/config.ini main &> /tmp/polybar.log &
+for m in $(polybar --list-monitors | cut -d":" -f1); do
+    monitor=$m polybar -c ./polybar/config.ini main &> /tmp/polybar.log &
 done

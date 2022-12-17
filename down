@@ -8,7 +8,7 @@ pkill polybar
 pkill dunst
 pkill feh
 
-if [ - "${SCRIPTPATH}/../config.ron.bak"]; then
-  rm $SCRIPTPATH/../config.ron
-  mv $SCRIPTPATH/../config.ron.bak $SCRIPTPATH/../config.ron
+if [ -f "${SCRIPTPATH}/../config.ron.bak" ]; then
+  rm $SCRIPTPATH/../../config.ron
+  mv $SCRIPTPATH/../../config.ron.bak $SCRIPTPATH/../config.ron
 fi

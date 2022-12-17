@@ -41,9 +41,10 @@
     focus_behaviour: Sloppy,
     focus_new_windows: true,
     keybind: [
-        (command: Execute, value: "rofi", modifier: ["modkey", "Shift"], key: "space"),
+        (command: Execute, value: "rofi -lines 12 -padding 18 -width 60 -location 0 -show drun -sidebar-mode -columns 3 -font 'Noto Sans 8'", modifier: ["modkey"], key: "space"),
         (command: Execute, value: "dmenu_run", modifier: ["modkey"], key: "p"),
-        (command: Execute, value: "alacritty", modifier: ["modkey", "Shift"], key: "Return"),
+        (command: Execute, value: "alacritty", modifier: ["Alt", "Shift"], key: "Return"),
+        
         (command: CloseWindow, value: "", modifier: ["modkey"], key: "q"),
         (command: SoftReload, value: "", modifier: ["modkey", "Shift"], key: "r"),
         (command: Execute, value: "loginctl kill-session $XDG_SESSION_ID", modifier: ["modkey", "Shift"], key: "x"),
